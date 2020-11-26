@@ -10,7 +10,6 @@ app.use(express.static("public"));
 
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/signup.html");
-
 });
 
 app.post("/", function(req, res) {
@@ -59,6 +58,36 @@ else if (response.statusCode != 200) {
 }
 });
 });
+
+
+
+// app.delete("/delete", function(req, res){
+//
+//   var deleteData = {
+//     members: [
+//       {
+//         email_address: email,
+//         merge_fields: {
+//           FNAME: fName,
+//           LNAME: lName
+//         }
+//       }
+//     ]
+//   };
+//   const jsonData = JSON.stringify(deleteData);
+//
+//   const requestDelete = https.request(url, options, function(req, res) {
+//     response.on("requestDelete", function(requestDelete){
+//       const deleteStatus = (JSON.parse(requestDelete));
+//
+//       if(deleteStatus.statusCode === 204){
+//         console.log("you are deleted");
+//       }
+//     })
+//   })
+//
+// });
+
 
 request.write(jsonData);
 request.end();
